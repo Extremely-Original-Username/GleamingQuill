@@ -24,36 +24,31 @@ namespace GleamingQuill
             InitializeComponent();
 
             //BUTTON creation
-            Button newWorldButton = createButton("New World");
-            //newWorldButton.Margin = new Thickness(0, 0, 0, 120);
-            Button loadWorldButton = createButton("Load World");
-            //loadWorldButton.Margin = new Thickness(0, 40, 0, 0);
-
-            MainGrid.Children.Add(newWorldButton);
-            MainGrid.Children.Add(loadWorldButton);
-
-            //BUTTON logic
-            newWorldButton.Click += (object sender, RoutedEventArgs e) => {
+            Button newWorldButton = createButton("New World", 5, (object sender, RoutedEventArgs e) => {
                 Application.Current.MainWindow = new WorldWindow("");
                 Application.Current.MainWindow.Show();
                 this.Close();
-            };
+            });
 
-            loadWorldButton.Click += (object sender, RoutedEventArgs e) => {
+            Button loadWorldButton = createButton("Load World", 7, (object sender, RoutedEventArgs e) => {
                 Application.Current.MainWindow = new WorldWindow("");
                 Application.Current.MainWindow.Show();
                 this.Close();
-            };
+            });
         }
 
-        private Button createButton(string buttonName)
+        private Button createButton(string buttonName, int rowNum, Action<object, RoutedEventArgs> onClick)
         {
-            return new Button()
-            {
-                Width = 140,
-                Height = 30,
-                Content = buttonName,
-            };
+            Button button = new Button();
+            button.Content = buttonName;
+            button.Click += (object sender, RoutedEventArgs e) => { onClick(sender, e); };
+
+            MainGrid.Children.Add(button);
+
+            Grid.SetColumn(button, 1);
+            Grid.SetRow(button, rowNum);
+
+            return button;
         }
     }
 }

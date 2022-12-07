@@ -9,9 +9,10 @@ namespace GleamingQuill.Model
 {
     static public class ArticleTypeDefDEFAULTS
     {
-        static ArticleTypeDef document = new ArticleTypeDef("Document", new List<IArticleElement>()
-        {
-            new LongText()
-        });
+        //for future
+        //static ArticleTypeDef document = new ArticleTypeDef("Document", new List<IArticleElement>()
+        //{
+        //    new LongText()
+        //});
     }
 }
