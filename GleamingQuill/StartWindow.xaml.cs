@@ -23,15 +23,17 @@ namespace GleamingQuill
         {
             InitializeComponent();
 
+            TextBox inputBox = createTextBox("World1", 5);
+
             //BUTTON creation
             Button newWorldButton = createButton("New World", 4, (object sender, RoutedEventArgs e) => {
-                Application.Current.MainWindow = new WorldWindow("");
+                Application.Current.MainWindow = new WorldWindow(inputBox.Text);
                 Application.Current.MainWindow.Show();
                 this.Close();
             });
 
             Button loadWorldButton = createButton("Load World", 6, (object sender, RoutedEventArgs e) => {
-                Application.Current.MainWindow = new WorldWindow("");
+                Application.Current.MainWindow = new WorldWindow(inputBox.Text);
                 Application.Current.MainWindow.Show();
                 this.Close();
             });
@@ -49,6 +51,19 @@ namespace GleamingQuill
             Grid.SetRow(button, rowNum);
 
             return button;
+        }
+
+        private TextBox createTextBox(string boxName, int rowNum)
+        {
+            TextBox textBox = new TextBox();
+            textBox.Text = boxName;
+
+            MainGrid.Children.Add(textBox);
+
+            Grid.SetColumn(textBox, 1);
+            Grid.SetRow(textBox, rowNum);
+
+            return textBox;
         }
     }
 }
