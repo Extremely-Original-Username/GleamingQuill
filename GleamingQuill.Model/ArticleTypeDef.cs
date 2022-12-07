@@ -12,5 +12,12 @@ namespace GleamingQuill.Model
         public Guid Id { get; set; }
         public string Name { get; set; }
         public List<IArticleElement> Elements { get; set; }
+
+        public ArticleTypeDef(string Name, List<IArticleElement> Elements)
+        {
+            this.Id = Guid.NewGuid();
+            this.Name = Name;
+            this.Elements = Elements;
+        }
     }
 }

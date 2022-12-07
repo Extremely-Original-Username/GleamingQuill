@@ -7,6 +7,22 @@
         mc:Ignorable="d"
         Title="WorldWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Name="ExplorerGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <ScrollViewer Name="articleExplorer">
+            </ScrollViewer>
+            <Button Height="50" Grid.Row="1" Name="createArticleButton">New Article</Button>
+        </Grid>
+        <Grid Name="ArticleGrid" Grid.Column="1">
+
+        </Grid>
     </Grid>
 </Window>

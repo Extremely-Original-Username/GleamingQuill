@@ -27,11 +27,11 @@ namespace GleamingQuill.Model
         }
 
         //FOR LOADING EXISTING ARTICLE
-        public Article(Guid Id, string Name, List<IArticleElement> Elements)
-        {
-            this.Id = Id;
-            this.Name = Name;
-            this.Elements = Elements;
-        }
+        //public Article(Guid Id, string Name, List<IArticleElement> Elements)
+        //{
+        //    this.Id = Id;
+        //    this.Name = Name;
+        //    this.Elements = Elements;
+        //}
     }
 }
