@@ -24,13 +24,13 @@ namespace GleamingQuill
             InitializeComponent();
 
             //BUTTON creation
-            Button newWorldButton = createButton("New World", 5, (object sender, RoutedEventArgs e) => {
+            Button newWorldButton = createButton("New World", 4, (object sender, RoutedEventArgs e) => {
                 Application.Current.MainWindow = new WorldWindow("");
                 Application.Current.MainWindow.Show();
                 this.Close();
             });
 
-            Button loadWorldButton = createButton("Load World", 7, (object sender, RoutedEventArgs e) => {
+            Button loadWorldButton = createButton("Load World", 6, (object sender, RoutedEventArgs e) => {
                 Application.Current.MainWindow = new WorldWindow("");
                 Application.Current.MainWindow.Show();
                 this.Close();

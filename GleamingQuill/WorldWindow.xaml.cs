@@ -28,8 +28,9 @@ namespace GleamingQuill
 
             this.Title = worldName;
 
-            worldContext = new WorldContext(worldName);
-            worldContext.Database.EnsureCreated();
+            //for future
+            //worldContext = new WorldContext(worldName);
+            //worldContext.Database.EnsureCreated();
         }
     }
 }
